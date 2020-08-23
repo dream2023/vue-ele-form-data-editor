@@ -1,0 +1,52 @@
+{
+  "name": "vue-ele-form-data-editor",
+  "description": "vue-ele-form 的极简数据编辑器",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dream2023/vue-ele-form-data-editor"
+  },
+  "main": "src/index.js",
+  "homepage": "https://github.com/dream2023/vue-ele-form-data-editor/",
+  "keywords": [
+    "vue-ele-form-data-editor",
+    "vue-ele-form",
+    "vue data editor"
+  ],
+  "dependencies": {
+    "serialize-javascript": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.5",
+    "element-ui": "2.13.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^6.2.2",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "vue": "^2.6.11",
+    "vue-ele-form": "^0.8.34",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
