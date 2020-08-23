@@ -79,7 +79,11 @@ export default {
           const value = eval("(" + this.newValue + ")");
           const valType = this.getType(value);
           const types = this.attrs.types;
-          if (types && !this.toArray(types).includes(valType)) {
+          if (
+            types &&
+            this.toArray(types).length &&
+            !this.toArray(types).includes(valType)
+          ) {
             throw new TypeError(
               `类型错误，期望类型为: ${types}, 实际类型为 ${valType}`
             );
