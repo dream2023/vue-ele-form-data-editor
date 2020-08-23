@@ -31,18 +31,7 @@ export default {
   inheritAttrs: false,
   name: "vue-ele-data-editor",
   mixins: [formMixin],
-  props: {
-    field: String,
-    value: {
-      type: [String, Object, Array, Function]
-    },
-    desc: {
-      type: Object,
-      default() {
-        return {};
-      }
-    }
-  },
+  props: ["field", "value", "desc"],
   data() {
     return {
       isSuccess: false,
