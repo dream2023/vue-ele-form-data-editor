@@ -7,6 +7,7 @@
       v-model="newValue"
       :class="desc.class"
       type="textarea"
+      @blur="attrs.autoSave ? handleChange() : null"
       @change="isError = false"
       :style="desc.style"
       v-bind="attrs"
@@ -15,9 +16,9 @@
     </el-input>
     <el-button
       size="medium"
-      @click="handleChange"
+      v-if="!attrs.autoSave"
       type="primary"
-      style="margin-top:10px"
+      style="margin-top:5px;margin-top:10px"
       >保存改动</el-button
     >
     <div class="err-msg" v-if="isError">{{ errMsg }}</div>
@@ -49,7 +50,8 @@ export default {
       errMsg: "",
       newValue: "",
       defaultAttrs: {
-        rows: 6
+        rows: 6,
+        autoSave: true
       }
     };
   },
@@ -76,7 +78,7 @@ export default {
           }
           const value = eval("(" + this.newValue + ")");
           const valType = this.getType(value);
-          const types = this.desc.attrs.types;
+          const types = this.attrs.types;
           if (types && !this.toArray(types).includes(valType)) {
             throw new TypeError(
               `类型错误，期望类型为: ${types}, 实际类型为 ${valType}`
@@ -106,7 +108,6 @@ export default {
       return Array.isArray(val) ? val : [val];
     },
     async handleChange() {
-      console.log();
       this.isError = false;
       try {
         const value = await this.validate(true);

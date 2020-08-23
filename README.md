@@ -36,6 +36,7 @@ Vue.use(EleForm, {
   // 专门设置全局的 data-editor 属性
   "data-editor": {
     types: ["array", "object"],
+    autoSave: false,
     // 其它属性，同 element input 组件
     // https://element.eleme.cn/#/zh-CN/component/input
     rows: 8
@@ -130,6 +131,11 @@ attrs: {
   // 数据类型列表
   types: {
     type: Array;
+  },
+  // 是否在是去焦点时自动保存，默认为 true
+  autoSave: {
+    type: Boolean,
+    default: true
   },
   // 其它属性，同 element input 组件
   // https://element.eleme.cn/#/zh-CN/component/input
