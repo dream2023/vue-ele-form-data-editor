@@ -25,7 +25,7 @@
   </div>
 </template>
 <script>
-import { formMixin } from "vue-ele-form";
+import formMixin from "vue-ele-form/lib/mixins/formMixin";
 import serialize from "serialize-javascript";
 export default {
   inheritAttrs: false,
