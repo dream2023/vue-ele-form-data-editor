@@ -1,7 +1,7 @@
 {
   "name": "vue-ele-form-data-editor",
   "description": "vue-ele-form 的极简数据编辑器",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "license": "MIT",
   "private": false,
   "scripts": {
